@@ -326,7 +326,7 @@ button {
 /* Projects */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -432,7 +432,7 @@ button {
 /* Education */
 .education-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -505,6 +505,7 @@ button {
 
   .cta-group {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .navbar {
@@ -542,6 +543,33 @@ button {
 
   .nav-links.active {
     display: flex;
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .glass-card {
+    padding: 1.5rem;
+  }
+
+  .contact-content {
+    margin: 0 10px;
+  }
+
+  .social-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .circle-glow {
+    width: 250px;
+    height: 250px;
   }
 }
 
