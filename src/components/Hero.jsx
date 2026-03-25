@@ -14,10 +14,10 @@ const AnimatedRole = ({ text }) => {
     return (
         <span key={key} style={{ display: 'inline-block' }}>
             {text.split('').map((char, index) => (
-                <span 
-                    key={index} 
-                    className="animate-letter" 
-                    style={{ 
+                <span
+                    key={index}
+                    className="animate-letter"
+                    style={{
                         animationDelay: `${index * 0.05}s`,
                         display: 'inline-block',
                         whiteSpace: 'pre'
@@ -55,7 +55,7 @@ const Hero = () => {
                     <div className="hero-profile-container">
                         <div className="tech-ring"></div>
                         <img src="/profile.png" alt={heroData.name} className="hero-profile-img" onError={(e) => {
-                            e.target.src = "https://via.placeholder.com/350x350/1c2331/25d366?text=Upload+profile.png+in+public+folder";
+                            e.target.src = "https://ui-avatars.com/api/?name=" + heroData.name + "&background=0D8ABC&color=fff";
                         }} />
                     </div>
                 </div>

@@ -66,8 +66,8 @@ export const experienceData = [
 export const educationData = [
     {
         id: 1,
-        degree: "B.Tech in Computer Science",
-        institute: "ABC Institute of Technology",
+        degree: "BSC Computer Science",
+        institute: "VBSPU University",
         year: "2024"
     }
 ];

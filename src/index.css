@@ -2,29 +2,29 @@
   --font-main: 'Inter', sans-serif;
   --font-heading: 'Outfit', sans-serif;
 
-  /* HSL Colors */
-  --hue-primary: 260;
-  --hue-secondary: 180;
+  /* Premium HSL Colors */
+  --hue-primary: 250; /* Softer Violet */
+  --hue-secondary: 190; /* Crisp Cyan */
 
-  --color-bg-dark: hsl(220, 15%, 10%);
-  --color-bg-card: hsl(220, 15%, 16%);
-  /* More transparent for glass effect */
-  --color-bg-card-glass: hsla(220, 15%, 16%, 0.6);
+  --color-bg-dark: hsl(225, 20%, 8%);
+  --color-bg-card: hsl(225, 20%, 14%);
+  --color-bg-card-glass: hsla(225, 20%, 14%, 0.7);
 
-  --color-primary: hsl(var(--hue-primary), 100%, 65%);
-  --color-primary-glow: hsla(var(--hue-primary), 100%, 65%, 0.5);
+  --color-primary: hsl(var(--hue-primary), 85%, 65%);
+  --color-primary-glow: hsla(var(--hue-primary), 85%, 65%, 0.4);
 
-  --color-secondary: hsl(var(--hue-secondary), 100%, 50%);
+  --color-secondary: hsl(var(--hue-secondary), 90%, 55%);
+  --color-secondary-glow: hsla(var(--hue-secondary), 90%, 55%, 0.3);
 
-  --color-text-main: hsl(0, 0%, 95%);
-  --color-text-secondary: hsl(220, 10%, 80%);
-  --color-text-muted: hsl(220, 10%, 60%);
+  --color-text-main: hsl(0, 0%, 98%);
+  --color-text-secondary: hsl(225, 15%, 85%);
+  --color-text-muted: hsl(225, 10%, 65%);
 
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
 
-  --nav-height: 70px;
+  --nav-height: 80px;
 }
 
 * {
@@ -94,18 +94,20 @@ button {
 
 .glass-card {
   background: var(--color-bg-card-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
-  padding: 2rem;
-  transition: transform 0.3s ease, background 0.3s ease;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 .glass-card:hover {
-  transform: translateY(-5px);
-  background: hsla(220, 15%, 20%, 0.7);
-  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-8px) scale(1.01);
+  background: hsla(225, 20%, 18%, 0.8);
+  border-color: var(--color-primary);
+  box-shadow: 0 12px 40px 0 rgba(var(--hue-primary), 0.2);
 }
 
 .btn-primary {
@@ -161,9 +163,10 @@ button {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(var(--color-primary), 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(var(--color-secondary), 0.1) 0%, transparent 40%);
+  background: 
+    radial-gradient(circle at 15% 15%, var(--color-primary-glow) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, var(--color-secondary-glow) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, hsla(var(--hue-primary), 50%, 10%, 0.5) 0%, transparent 100%);
   pointer-events: none;
 }
 
