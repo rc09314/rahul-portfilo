@@ -54,8 +54,8 @@ const Hero = () => {
                     <div className="circle-glow"></div>
                     <div className="hero-profile-container">
                         <div className="tech-ring"></div>
-                        <img src="/profile.jpg" alt={heroData.name} className="hero-profile-img" onError={(e) => {
-                            e.target.src = "https://via.placeholder.com/350x350/1c2331/25d366?text=Upload+profile.jpg+in+public+folder";
+                        <img src="/profile.png" alt={heroData.name} className="hero-profile-img" onError={(e) => {
+                            e.target.src = "https://via.placeholder.com/350x350/1c2331/25d366?text=Upload+profile.png+in+public+folder";
                         }} />
                     </div>
                 </div>
