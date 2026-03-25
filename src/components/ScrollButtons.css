@@ -54,18 +54,26 @@
 
 @media screen and (max-width: 767px) {
   .scroll-buttons-container {
-    bottom: 85px; /* Above the smaller mobile WhatsApp button */
-    right: 20px;
+    bottom: 70px; /* Above the smaller mobile WhatsApp button */
+    right: 15px;
     gap: 8px;
+    opacity: 0.8;
   }
   
   .scroll-btn {
-    width: 38px;
-    height: 38px;
+    width: 35px;
+    height: 35px;
   }
   
   .scroll-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .scroll-buttons-container {
+    right: 10px;
+    bottom: 60px;
   }
 }

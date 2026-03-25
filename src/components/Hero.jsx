@@ -54,9 +54,18 @@ const Hero = () => {
                     <div className="circle-glow"></div>
                     <div className="hero-profile-container">
                         <div className="tech-ring"></div>
-                        <img src="/profile.png" alt={heroData.name} className="hero-profile-img" onError={(e) => {
-                            e.target.src = "https://ui-avatars.com/api/?name=" + heroData.name + "&background=0D8ABC&color=fff";
-                        }} />
+                        <img
+                            src="/logo.jpeg"
+                            alt={heroData.name}
+                            className="hero-profile-img"
+                            onError={(e) => {
+                                if (e.target.src.includes('profile.png')) {
+                                    e.target.src = "/profile.jpg";
+                                } else {
+                                    e.target.src = "https://ui-avatars.com/api/?name=" + heroData.name + "&background=0D8ABC&color=fff";
+                                }
+                            }}
+                        />
                     </div>
                 </div>
             </div>

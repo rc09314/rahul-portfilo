@@ -67,20 +67,29 @@
 
 @media screen and (max-width: 767px) {
   .gmail-float {
-    bottom: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
+    bottom: 15px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
     padding: 0 10px;
+    opacity: 0.9;
   }
   .gmail-icon {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
   .gmail-float:hover {
-    width: 150px;
+    width: 140px;
+    opacity: 1;
   }
   .gmail-text {
-    font-size: 14px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .gmail-float {
+    bottom: 10px;
+    left: 10px;
   }
 }

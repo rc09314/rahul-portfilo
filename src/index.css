@@ -140,9 +140,10 @@ button {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   text-align: center;
   margin-bottom: 3rem;
+  padding: 0 1rem;
 }
 
 .section-title::after {
@@ -176,7 +177,7 @@ button {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
+  width: 95%;
   max-width: 1200px;
   height: var(--nav-height);
   display: flex;
@@ -271,15 +272,17 @@ button {
 }
 
 .name {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   margin-bottom: 0.5rem;
   line-height: 1.1;
+  word-break: keep-all;
 }
 
 .role {
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
   color: var(--color-text-secondary);
   margin-bottom: 1.5rem;
+  min-height: 1.5em; /* Prevent layout jump */
 }
 
 .intro {
@@ -292,12 +295,13 @@ button {
 .cta-group {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* Skills */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
@@ -331,6 +335,11 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+}
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-card {
@@ -432,6 +441,13 @@ button {
   margin-bottom: 0.5rem;
 }
 
+@media (max-width: 480px) {
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 /* Education */
 .education-grid {
   display: grid;
@@ -500,15 +516,18 @@ button {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 3rem;
   }
 
-  .name {
-    font-size: 3rem;
+  .intro {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
   }
 
   .cta-group {
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 1.5rem;
   }
 
   .navbar {
@@ -521,58 +540,74 @@ button {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    z-index: 1001;
   }
 
   .bar {
     width: 25px;
     height: 2px;
     background: white;
+    transition: 0.3s;
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
     background: var(--color-bg-card);
     flex-direction: column;
-    padding: 2rem;
-    gap: 1.5rem;
-    display: none;
-    border-radius: var(--radius-md);
-    margin-top: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 100px 2rem 2rem;
+    gap: 2rem;
+    display: flex;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
   }
 
   .nav-links.active {
-    display: flex;
+    right: 0;
   }
 
   .section-padding {
     padding: 60px 0;
   }
 
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
   .glass-card {
     padding: 1.5rem;
   }
 
-  .contact-content {
-    margin: 0 10px;
-  }
-
   .social-links {
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 1.5rem;
   }
+}
 
-  .circle-glow {
-    width: 250px;
-    height: 250px;
+@media (max-width: 600px) {
+  .section-padding {
+    padding: 40px 0;
+  }
+  
+  .hero-section {
+    padding-top: 100px;
+  }
+  
+  .cta-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .btn-primary, .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -582,7 +617,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: clamp(300px, 50vw, 400px);
 }
 
 .circle-glow {
@@ -619,7 +654,7 @@ button {
 @keyframes slideInRightLetter {
   0% {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(15px); /* Reduced movement for mobile friendliness */
   }
   100% {
     opacity: 1;
@@ -650,8 +685,8 @@ button {
 /* Khatarnak Profile Animation */
 .hero-profile-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: min(350px, 70vw);
+  height: min(350px, 70vw);
   display: flex;
   justify-content: center;
   align-items: center;
